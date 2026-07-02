@@ -1,0 +1,151 @@
+CoInitializeEx: hr=0x00000000
+CLSIDFromString(provider): hr=0x00000000
+CoCreateInstance(provider): hr=0x00000000
+QueryInterface(IDBProperties): hr=0x00000000
+IDBProperties::SetProperties: hr=0x00000000
+IDBInitialize::Initialize: hr=0x00000000
+QueryInterface(IDBCreateSession): hr=0x00000000
+IDBCreateSession::CreateSession(IDBSchemaRowset): hr=0x00000000
+
+=== DBSCHEMA_TABLES ===
+IDBSchemaRowset::GetRowset: hr=0x00000000
+QueryInterface(IColumnsInfo): hr=0x00000000
+IColumnsInfo::GetColumnInfo: hr=0x00000000
+  [1] table_catalog type=0x0082 size=4 precision=0 scale=0
+  [2] table_schema type=0x0082 size=1024 precision=0 scale=0
+  [3] table_name type=0x0082 size=1024 precision=0 scale=0
+  [4] table_type type=0x0082 size=5 precision=0 scale=0
+  [5] table_guid type=0x0048 size=16 precision=0 scale=0
+  [6] description type=0x0082 size=255 precision=0 scale=0
+  [7] table_propid type=0x0013 size=10 precision=10 scale=0
+  [8] date_created type=0x0007 size=8 precision=0 scale=0
+  [9] date_modified type=0x0007 size=8 precision=0 scale=0
+QueryInterface(IAccessor): hr=0x00000000
+IAccessor::CreateAccessor: hr=0x00000000
+IRowset::GetNextRows: hr=0x00000000
+IRowset::GetData: hr=0x00000000
+  table_catalog status=0x00000000 value=demo
+  table_schema status=0x00000000 value=sys
+  table_name status=0x00000000 value=miranet_v_logsco_operatori_giorno
+  table_type status=0x00000000 value=VIEW
+  table_guid status=0x00000003 value=<null>
+  description status=0x00000003 value=<null>
+  table_propid status=0x00000003 value=<null>
+  date_created status=0x00000003 value=<null>
+  date_modified status=0x00000003 value=<null>
+
+=== DBSCHEMA_COLUMNS ===
+IDBSchemaRowset::GetRowset: hr=0x00000000
+QueryInterface(IColumnsInfo): hr=0x00000000
+IColumnsInfo::GetColumnInfo: hr=0x00000000
+  [1] table_catalog type=0x0082 size=4 precision=0 scale=0
+  [2] table_schema type=0x0082 size=1024 precision=0 scale=0
+  [3] table_name type=0x0082 size=1024 precision=0 scale=0
+  [4] column_name type=0x0082 size=1024 precision=0 scale=0
+  [5] column_guid type=0x0048 size=16 precision=0 scale=0
+  [6] column_propid type=0x0013 size=10 precision=10 scale=0
+  [7] ordinal_position type=0x0013 size=10 precision=10 scale=0
+  [8] column_hasdefault type=0x000B size=2 precision=0 scale=0
+  [9] column_default type=0x0082 size=255 precision=0 scale=0
+  [10] column_flags type=0x0013 size=10 precision=10 scale=0
+  [11] is_nullable type=0x000B size=2 precision=0 scale=0
+  [12] data_type type=0x0012 size=5 precision=5 scale=0
+  [13] type_guid type=0x0048 size=16 precision=0 scale=0
+  [14] character_maximum_length type=0x0013 size=10 precision=10 scale=0
+  [15] character_octet_length type=0x0013 size=10 precision=10 scale=0
+  [16] numeric_precision type=0x0012 size=5 precision=5 scale=0
+  [17] numeric_scale type=0x0002 size=5 precision=5 scale=0
+  [18] datetime_precision type=0x0013 size=10 precision=10 scale=0
+  [19] character_set_catalog type=0x0082 size=255 precision=0 scale=0
+  [20] character_set_schema type=0x0082 size=255 precision=0 scale=0
+  [21] character_set_name type=0x0082 size=255 precision=0 scale=0
+  [22] collation_catalog type=0x0082 size=255 precision=0 scale=0
+  [23] collation_schema type=0x0082 size=255 precision=0 scale=0
+  [24] collation_name type=0x0082 size=255 precision=0 scale=0
+  [25] domain_catalog type=0x0082 size=255 precision=0 scale=0
+  [26] domain_schema type=0x0082 size=255 precision=0 scale=0
+  [27] domain_name type=0x0082 size=255 precision=0 scale=0
+  [28] description type=0x0082 size=255 precision=0 scale=0
+QueryInterface(IAccessor): hr=0x00000000
+IAccessor::CreateAccessor: hr=0x00000000
+IRowset::GetNextRows: hr=0x00000000
+IRowset::GetData: hr=0x00000000
+  table_catalog status=0x00000000 value=demo
+  table_schema status=0x00000000 value=sys
+  table_name status=0x00000000 value=schemas
+  column_name status=0x00000000 value=id
+  column_guid status=0x00000003 value=<null>
+  column_propid status=0x00000003 value=<null>
+  ordinal_position status=0x00000000 value=0
+  column_hasdefault status=0x00000000 value=FALSE
+  column_default status=0x00000003 value=<null>
+  column_flags status=0x00000000 value=96
+  is_nullable status=0x00000000 value=TRUE
+  data_type status=0x00000000 value=3
+  type_guid status=0x00000003 value=<null>
+  character_maximum_length status=0x00000000 value=10
+  character_octet_length status=0x00000003 value=<null>
+  numeric_precision status=0x00000000 value=10
+  numeric_scale status=0x00000003 value=<null>
+  datetime_precision status=0x00000003 value=<null>
+  character_set_catalog status=0x00000003 value=<null>
+  character_set_schema status=0x00000003 value=<null>
+  character_set_name status=0x00000003 value=<null>
+  collation_catalog status=0x00000003 value=<null>
+  collation_schema status=0x00000003 value=<null>
+  collation_name status=0x00000003 value=<null>
+  domain_catalog status=0x00000003 value=<null>
+  domain_schema status=0x00000003 value=<null>
+  domain_name status=0x00000003 value=<null>
+  description status=0x00000003 value=<null>
+
+=== DBSCHEMA_PROVIDER_TYPES ===
+IDBSchemaRowset::GetRowset: hr=0x00000000
+QueryInterface(IColumnsInfo): hr=0x00000000
+IColumnsInfo::GetColumnInfo: hr=0x00000000
+  [1] type_name type=0x0082 size=1024 precision=0 scale=0
+  [2] data_type type=0x0012 size=5 precision=5 scale=0
+  [3] column_size type=0x0013 size=10 precision=10 scale=0
+  [4] literal_prefix type=0x0082 size=8 precision=0 scale=0
+  [5] literal_suffix type=0x0082 size=8 precision=0 scale=0
+  [6] create_params type=0x0082 size=32 precision=0 scale=0
+  [7] is_nullable type=0x000B size=2 precision=0 scale=0
+  [8] case_sensitive type=0x000B size=2 precision=0 scale=0
+  [9] searchable type=0x0013 size=10 precision=10 scale=0
+  [10] unsigned_attribute type=0x000B size=2 precision=0 scale=0
+  [11] fixed_prec_scale type=0x000B size=2 precision=0 scale=0
+  [12] auto_unique_value type=0x000B size=2 precision=0 scale=0
+  [13] local_type_name type=0x0082 size=1024 precision=0 scale=0
+  [14] minimum_scale type=0x0002 size=5 precision=5 scale=0
+  [15] maximum_scale type=0x0002 size=5 precision=5 scale=0
+  [16] guid type=0x0048 size=16 precision=0 scale=0
+  [17] typelib type=0x0082 size=255 precision=0 scale=0
+  [18] version type=0x0082 size=32 precision=0 scale=0
+  [19] is_long type=0x000B size=2 precision=0 scale=0
+  [20] best_match type=0x000B size=2 precision=0 scale=0
+  [21] is_fixedlength type=0x000B size=2 precision=0 scale=0
+QueryInterface(IAccessor): hr=0x00000000
+IAccessor::CreateAccessor: hr=0x00000000
+IRowset::GetNextRows: hr=0x00000000
+IRowset::GetData: hr=0x00000000
+  type_name status=0x00000000 value=url
+  data_type status=0x00000000 value=129
+  column_size status=0x00000003 value=<null>
+  literal_prefix status=0x00000003 value=<null>
+  literal_suffix status=0x00000003 value=<null>
+  create_params status=0x00000003 value=<null>
+  is_nullable status=0x00000000 value=TRUE
+  case_sensitive status=0x00000000 value=FALSE
+  searchable status=0x00000000 value=4
+  unsigned_attribute status=0x00000003 value=<null>
+  fixed_prec_scale status=0x00000000 value=FALSE
+  auto_unique_value status=0x00000000 value=FALSE
+  local_type_name status=0x00000000 value=url
+  minimum_scale status=0x00000003 value=<null>
+  maximum_scale status=0x00000003 value=<null>
+  guid status=0x00000003 value=<null>
+  typelib status=0x00000003 value=<null>
+  version status=0x00000003 value=<null>
+  is_long status=0x00000000 value=FALSE
+  best_match status=0x00000000 value=FALSE
+  is_fixedlength status=0x00000000 value=TRUE

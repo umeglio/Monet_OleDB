@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9D1F7E3C-3E9F-4E6B-BBE1-7D14E4E733AA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B6AB204C-768B-4F5E-9B16-9D9D922A48F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{F1C68DBB-5F59-4D9B-B6A1-D17B22A2047A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{2E7C8D70-C760-4F55-B45D-165B66267A79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build">
+      <UniqueIdentifier>{241A9495-3A1C-4C2E-98AB-71D8C194A97A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\monetdb_oledb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\command.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\datasource.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\monetdb_oledb_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\odbc_utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rowset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\schema.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\session.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\monetdb_oledb.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="scripts\register.bat">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="scripts\setup_linkedserver.sql">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="scripts\diagnose_provider.ps1">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Makefile">
+      <Filter>Build</Filter>
+    </None>
+    <None Include="monetdb_oledb.def">
+      <Filter>Build</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>Build</Filter>
+    </None>
+  </ItemGroup>
+</Project>
+
