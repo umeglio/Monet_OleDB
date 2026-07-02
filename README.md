@@ -204,4 +204,14 @@ Released under the [MIT License](LICENSE). You are free to use, modify, redistri
 
 ## Acknowledgements
 
-A heartfelt thank-you goes to the MonetDB developers at CWI for their remarkable openness and availability towards the community: decades of pioneering work on columnar databases, still actively maintained and generously shared. More about the project's background is in the [Italian README](README.it.md).
+A heartfelt thank-you goes to the MonetDB developers for their remarkable openness and availability towards the community: decades of pioneering work on columnar databases, still actively maintained and generously shared.
+
+In particular, a special thank-you to **Niels Nes** for his ability to explain and share knowledge — his willingness to divulge and to give back to the community is exactly what makes projects like this one possible.
+
+**References:**
+
+- MonetDB Solutions — <https://www.monetdbsolutions.com/>
+- CWI (Centrum Wiskunde & Informatica) — <https://www.cwi.nl/en/>
+- MonetDB — <https://www.monetdb.org/>
+
+More about the project's background is in the [Italian README](README.it.md).
