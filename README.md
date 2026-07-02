@@ -1,9 +1,12 @@
 # MonetDB OLE DB Provider per SQL Server
 
-**Autore:** Umberto Meglio  
-**Supporto alla creazione:** Claude di Anthropic  
+**Autore:** Umberto Meglio
+**Supporto alla creazione:** Claude di Anthropic
 **Versione corrente:** 1.0.52-varchar2000
-**Licenza:** Proprietaria — Sipos Srl
+**Licenza:** [MIT](LICENSE)
+
+> 🇬🇧 *English speakers: full documentation is available in [English](docs/DOCUMENTATION.en.md).*
+> 🇮🇹 *La documentazione completa in italiano è disponibile in [docs/DOCUMENTAZIONE.it.md](docs/DOCUMENTAZIONE.it.md).*
 
 ---
 
@@ -27,6 +30,15 @@ SQL Server (SSMS / T-SQL)
    MonetDB Server
 ```
 
+## Documentazione
+
+| Documento | Lingua |
+|-----------|--------|
+| [docs/DOCUMENTAZIONE.it.md](docs/DOCUMENTAZIONE.it.md) | Italiano |
+| [docs/DOCUMENTATION.en.md](docs/DOCUMENTATION.en.md) | English |
+
+La documentazione copre in dettaglio: architettura, interfacce COM implementate, schema rowset, configurazione INI, build, installazione, configurazione del linked server, tuning delle prestazioni, logging, diagnostica e risoluzione dei problemi.
+
 ## Interfacce implementate
 
 | Oggetto COM | Interfacce |
@@ -34,7 +46,7 @@ SQL Server (SSMS / T-SQL)
 | Data Source | `IDBInitialize`, `IDBProperties`, `IDBCreateSession`, `IPersist`, `IDBInfo` |
 | Session     | `IOpenRowset`, `IGetDataSource`, `IDBCreateCommand`, `IDBSchemaRowset`, `ISessionProperties`, `ITransactionJoin`, `ITransactionLocal` |
 | Command     | `ICommandText`, `ICommandProperties`, `IColumnsInfo`, `IAccessor`, `IConvertType`, `ICommandPrepare` |
-| Rowset      | `IRowset`, `IAccessor`, `IColumnsInfo`, `IRowsetInfo`, `IConvertType` |
+| Rowset      | `IRowset`, `IRowsetChange`, `IAccessor`, `IColumnsInfo`, `IRowsetInfo`, `IConvertType` |
 
 ### Navigazione catalogo (`IDBSchemaRowset`)
 
@@ -73,13 +85,26 @@ monetdb_oledb/
 │   └── schema.c
 ├── config/
 │   └── monetdb_oledb.ini
+├── docs/
+│   ├── DOCUMENTAZIONE.it.md
+│   └── DOCUMENTATION.en.md
 ├── scripts/
 │   ├── register.bat
+│   ├── reregister_here.bat
 │   ├── setup_linkedserver.sql
-│   └── diagnose_provider.ps1
+│   ├── diagnose_provider.ps1
+│   ├── unlock_provider.ps1
+│   ├── deploy_137_admin.ps1
+│   └── widen_varchar_2000.ps1
+├── tools/
+│   ├── probe_msdainitialize.c
+│   ├── probe_query_fetch.c
+│   ├── probe_rowsetchange.c
+│   └── probe_schema_rowsets.c
 ├── monetdb_oledb.def
 ├── monetdb_oledb.sln / .vcxproj
 ├── Makefile
+├── LICENSE
 └── README.md
 ```
 
@@ -113,7 +138,7 @@ Oppure aprire `monetdb_oledb.sln` in Visual Studio 2022 e compilare `x64`.
 nmake install
 ```
 
-`nmake install` prova prima a chiudere gli eventuali surrogate COM `dllhost.exe` che tengono aperta la DLL. Se la DLL e ancora caricata da `sqlservr.exe` o da SSMS, l'installazione si ferma con un messaggio esplicito invece del generico errore "file in uso".
+`nmake install` prova prima a chiudere gli eventuali surrogate COM `dllhost.exe` che tengono aperta la DLL. Se la DLL è ancora caricata da `sqlservr.exe` o da SSMS, l'installazione si ferma con un messaggio esplicito invece del generico errore "file in uso".
 
 Oppure copiare DLL/INI e registrare manualmente:
 
@@ -132,7 +157,7 @@ FetchRows=256
 FetchWindowKB=1204
 ```
 
-`FetchRows` controlla quante righe il rowset prova a prefetcharare in un batch e viene usato anche come dimensione batch per gli insert via `IRowsetChange::InsertRow`; `FetchWindowKB` limita sia la memoria della finestra buffered sia la dimensione massima di una `INSERT ... VALUES (...), ...` multi-riga. Con `Trace=1` il log riporta anche `fetch_rows`, `fetch_window_kb`, `elapsed_us`, `avg_row_bytes`, `rows_per_sec` per ogni prefetch e `Rowset::InsertBatch` per gli insert batch.
+`FetchRows` controlla quante righe il rowset prova a prefetchare in un batch e viene usato anche come dimensione batch per gli insert via `IRowsetChange::InsertRow`; `FetchWindowKB` limita sia la memoria della finestra buffered sia la dimensione massima di una `INSERT ... VALUES (...), ...` multi-riga. Con `Trace=1` il log riporta anche `fetch_rows`, `fetch_window_kb`, `elapsed_us`, `avg_row_bytes`, `rows_per_sec` per ogni prefetch e `Rowset::InsertBatch` per gli insert batch.
 
 ## Utilizzo da SQL Server
 
@@ -161,7 +186,7 @@ powershell -ExecutionPolicy Bypass -File scripts\diagnose_provider.ps1
 ```
 
 `diagnose_provider.ps1` mostra anche i processi che tengono aperta `monetdb_oledb.dll`. Se compare `dllhost.exe /Processid:{2206CDB0-19C1-11D1-89E0-00C04FD7A829}`, si tratta del surrogate COM `MSDAINITIALIZE` del layer OLE DB.
-Mostra inoltre le ultime righe rilevanti dell'`ERRORLOG` di SQL Server per `MonetDB`, `OLE DB` e gli errori piu comuni dei linked server.
+Mostra inoltre le ultime righe rilevanti dell'`ERRORLOG` di SQL Server per `MonetDB`, `OLE DB` e gli errori più comuni dei linked server.
 
 ## Note tecniche
 
@@ -189,3 +214,9 @@ Prima della messa in produzione è consigliato validare e rifinire:
 - le query esatte sul catalogo MonetDB in base alla versione del server;
 - le conversioni tipo più complesse;
 - la compatibilità completa con tutti i probe effettuati da SQL Server/OLE DB services.
+
+## Licenza
+
+Questo progetto è distribuito con licenza [MIT](LICENSE).
+
+Copyright (c) 2026 Umberto Meglio
