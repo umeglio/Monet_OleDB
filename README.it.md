@@ -45,6 +45,14 @@ Essendo rilasciato con **licenza MIT**, chiunque può usarlo liberamente per acc
 
 Un ringraziamento sentito va agli sviluppatori di MonetDB e al team del CWI per il loro contributo e per la straordinaria disponibilità dimostrata verso la comunità: rispondere, spiegare e condividere con generosità decenni di lavoro pionieristico non è affatto scontato, ed è ciò che rende possibile la nascita di componenti come questo.
 
+Un ringraziamento particolare a **Niels Nes**, per la sua capacità di divulgare e di condividere: la disponibilità a spiegare e a restituire alla comunità è esattamente ciò che permette a progetti come questo di esistere.
+
+**Riferimenti:**
+
+- MonetDB Solutions — <https://www.monetdbsolutions.com/>
+- CWI (Centrum Wiskunde & Informatica) — <https://www.cwi.nl/en/>
+- MonetDB — <https://www.monetdb.org/>
+
 ## Interfacce implementate
 
 | Oggetto COM | Interfacce |
